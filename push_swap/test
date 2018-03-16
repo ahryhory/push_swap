@@ -1,0 +1,1 @@
+ARG=""; ./push_swap $ARG | ../checker/checker $ARG

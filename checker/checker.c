@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 12:51:45 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/15 15:59:36 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/16 16:40:53 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		main(int ac, char **av)
 			break ;
 		move_stack(&stacks, buf);
 		ft_strdel(&buf);
-		print_stacks(stacks);
+//		print_stacks(stacks);
 	}
 	if (is_stack_sorted(stacks))
 		ft_putendl("OK");
