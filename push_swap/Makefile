@@ -6,7 +6,7 @@
 #    By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/22 12:17:34 by ahryhory          #+#    #+#              #
-#    Updated: 2018/03/16 15:57:59 by ahryhory         ###   ########.fr        #
+#    Updated: 2018/03/21 15:15:38 by ahryhory         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,14 @@ SRC =
 SRC += push_swap.c
 SRC += is_stack_sorted.c
 SRC += move_stack.c
+SRC += reverse_rotate.c
+SRC += rotate.c
+SRC += not_last_group.c
 SRC += print_stacks.c
+SRC += push.c
 SRC += get_median.c
-SRC += sort_3_elem.c
+SRC += b_to_a.c
+SRC += sort_elem.c
 
 all: $(NAME)
 

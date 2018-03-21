@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 11:38:27 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/16 15:45:42 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/21 15:38:59 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,13 @@ typedef struct	s_stacks
 
 void			move_stack(t_stacks *stacks, char *buf);
 int				is_stack_sorted(t_stacks stacks);
+int				not_last_group(t_stacks stacks);
 void			print_stacks(t_stacks stacks);
-int				get_median(t_stacks stacks, char stack);
-void			sort_3_elem(t_stacks *stacks, char stack);
+int				get_median(t_stacks stacks, char stack, int *count, int *num);
+void			sort_elem(t_stacks *stacks);
+void			b_to_a(t_stacks *stacks);
+void			push(t_stacks *stacks, char *buf);
+void			reverse_rotate(t_stacks *stacks, char *buf);
+void			rotate(t_stacks *stacks, char *buf);
 
 #endif
