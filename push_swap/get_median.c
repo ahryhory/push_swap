@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 11:52:36 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/21 16:51:41 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/22 11:53:42 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ static int	get_median_a(t_stacks stacks, int *count)
 		size++;
 		i++;
 	}
-	if (i % 2 != 0)
-		*count = (i / 2) + 1;
+	if (size % 2 != 0)
+		*count = (i / 2);
 	else
 		*count = (i / 2);
 	sort_arr(arr, size);
@@ -78,7 +78,7 @@ static int	get_median_b(t_stacks stacks, int *count, int *num)
 	}
 	*num = i;
 	if (i % 2 == 0)
-		*count = i / 2;
+		*count = (i / 2);
 	else
 		*count = (i / 2) + 1;
 	sort_arr(arr, size);

@@ -6,7 +6,7 @@
 #    By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/22 12:17:34 by ahryhory          #+#    #+#              #
-#    Updated: 2018/03/15 15:29:01 by ahryhory         ###   ########.fr        #
+#    Updated: 2018/03/22 15:25:46 by ahryhory         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,11 @@ LIB = ../libft/libft.a
 SRC =
 
 SRC += checker.c
+SRC += ft_error.c
+SRC += reverse_rotate.c
+SRC += rotate.c
+SRC += push.c
+SRC += p_atoi.c
 SRC += is_stack_sorted.c
 SRC += move_stack.c
 SRC += print_stacks.c

@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/21 12:29:23 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/21 16:51:00 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/22 11:54:06 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static void	a_to_b(t_stacks *stacks, int pa)
 		rb = 0;
 		median = get_median(*stacks, 'a', &count, &size);
 		while (count)
-			if (stacks->a_int[0].num < median || (stacks->a_int[0].num == median && size % 2 != 0))
+			if (stacks->a_int[0].num < median)
 			{
 				stacks->a_int[0].median = median;
 				pa--;

@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 11:39:22 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/21 16:49:22 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/22 11:54:00 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	sort(t_stacks stacks)
 		median = get_median(stacks, 'a', &count, &size);
 		while (count)
 		{
-			if (stacks.a_int[0].num < median || (stacks.a_int[0].num == median && size % 2 != 0))
+			if (stacks.a_int[0].num < median)
 			{
 				stacks.a_int[0].median = median;
 				move_stack(&stacks, PUSH_B);

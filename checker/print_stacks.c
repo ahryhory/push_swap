@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 15:13:26 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/15 15:30:10 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/22 15:31:00 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		print_stacks(t_stacks stacks)
 	i = 0;
 	while (i < stacks.a_size)
 	{
-		ft_putnbr(stacks.a_int[i++]);
+		ft_putnbr(stacks.a_int[i++].num);
 		ft_putstr("\n");
 	}
 	ft_putendl("====STACK B====");
@@ -33,7 +33,7 @@ void		print_stacks(t_stacks stacks)
 	i = 0;
 	while (i < stacks.b_size)
 	{
-		ft_putnbr(stacks.b_int[i++]);
+		ft_putnbr(stacks.b_int[i++].num);
 		ft_putstr("\n");
 	}
 	ft_putstr("\n\n");

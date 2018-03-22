@@ -6,11 +6,12 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 13:33:46 by ahryhory          #+#    #+#             */
-/*   Updated: 2017/12/24 12:50:10 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/22 14:42:41 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 
 static int		ft_find_end(char **str)
 {
