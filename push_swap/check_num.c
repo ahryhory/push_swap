@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stacks.c                                     :+:      :+:    :+:   */
+/*   check_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/15 15:13:26 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/22 16:35:25 by ahryhory         ###   ########.fr       */
+/*   Created: 2018/03/23 11:27:32 by ahryhory          #+#    #+#             */
+/*   Updated: 2018/03/23 13:57:22 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void		print_stacks(t_stacks stacks)
+void	check_num(char **av, int i, t_stacks stacks)
 {
-	int		i;
+	int		j;
 
-	ft_putendl_fd("====STACK A====", stacks.fd);
-	i = 0;
-	while (i < stacks.a_size)
+	while (av[i])
 	{
-		ft_putnbr_fd(stacks.a_int[i].num, stacks.fd);
+		if (av[i][0] != '-' && av[i][0] != '+' && !ft_isdigit(av[i][0]))
+			ft_error(2, stacks);
+		if ((av[i][0] == '-' || av[i][0] == '+') && !ft_isdigit(av[i][1]))
+			ft_error(2, stacks);
+		j = 1;
+		while (av[i][j])
+		{
+			if (!ft_isdigit(av[i][j]))
+				ft_error(2, stacks);
+			j++;
+		}
 		i++;
-		ft_putstr_fd("\n", stacks.fd);
 	}
-	ft_putendl_fd("====STACK B====", stacks.fd);
-	i = 0;
-	while (i < stacks.b_size)
-	{
-		ft_putnbr_fd(stacks.b_int[i].num, stacks.fd);
-		i++;
-		ft_putstr_fd("\n", stacks.fd);
-	}
-	ft_putstr_fd("\n\n", stacks.fd);
 }

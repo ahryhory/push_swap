@@ -6,11 +6,11 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 14:57:38 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:05:18 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/23 15:51:17 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 int			p_atoi(const char *str, t_stacks stacks)
 {

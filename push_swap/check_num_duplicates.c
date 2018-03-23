@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stacks.c                                     :+:      :+:    :+:   */
+/*   check_num_duplicates.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/15 15:13:26 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:05:41 by ahryhory         ###   ########.fr       */
+/*   Created: 2018/03/23 11:29:01 by ahryhory          #+#    #+#             */
+/*   Updated: 2018/03/23 13:54:17 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-void		print_stacks(t_stacks stacks)
+void	check_num_duplicates(t_stacks stacks)
 {
 	int		i;
+	int		j;
 
-	ft_putendl_fd("====STACK A====", stacks.fd);
 	i = 0;
-	while (i < stacks.a_size)
+	while (i < stacks.a_size - 1)
 	{
-		ft_putnbr_fd(stacks.a_int[i].num, stacks.fd);
+		j = i + 1;
+		while (j < stacks.a_size)
+		{
+			if (stacks.a_int[i].num == stacks.a_int[j].num)
+				ft_error(4, stacks);
+			j++;
+		}
 		i++;
-		ft_putstr_fd("\n", stacks.fd);
 	}
-	ft_putendl_fd("====STACK B====", stacks.fd);
-	i = 0;
-	while (i < stacks.b_size)
-	{
-		ft_putnbr_fd(stacks.b_int[i].num, stacks.fd);
-		i++;
-		ft_putstr_fd("\n", stacks.fd);
-	}
-	ft_putstr_fd("\n\n", stacks.fd);
 }

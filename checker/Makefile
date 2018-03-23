@@ -6,7 +6,7 @@
 #    By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/22 12:17:34 by ahryhory          #+#    #+#              #
-#    Updated: 2018/03/22 15:25:46 by ahryhory         ###   ########.fr        #
+#    Updated: 2018/03/23 16:22:12 by ahryhory         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,15 @@ SRC += ft_error.c
 SRC += reverse_rotate.c
 SRC += rotate.c
 SRC += push.c
+SRC += read_flags.c
+SRC += check_num.c
+SRC += check_num_duplicates.c
 SRC += p_atoi.c
 SRC += is_stack_sorted.c
-SRC += move_stack.c
+SRC += ft_putendl_color.c
 SRC += print_stacks.c
+SRC += print_stats.c
+SRC += move_stack.c
 
 all: $(NAME)
 

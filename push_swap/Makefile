@@ -6,7 +6,7 @@
 #    By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/22 12:17:34 by ahryhory          #+#    #+#              #
-#    Updated: 2018/03/21 15:15:38 by ahryhory         ###   ########.fr        #
+#    Updated: 2018/03/23 14:24:22 by ahryhory         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,14 +25,21 @@ SRC =
 SRC += push_swap.c
 SRC += is_stack_sorted.c
 SRC += move_stack.c
+SRC += read_flags.c
 SRC += reverse_rotate.c
+SRC += ft_putendl_color.c
 SRC += rotate.c
 SRC += not_last_group.c
 SRC += print_stacks.c
+SRC += print_stats.c
 SRC += push.c
 SRC += get_median.c
+SRC += p_atoi.c
 SRC += b_to_a.c
 SRC += sort_elem.c
+SRC += check_num_duplicates.c 
+SRC += ft_error.c
+SRC += check_num.c
 
 all: $(NAME)
 

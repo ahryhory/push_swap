@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stacks.c                                     :+:      :+:    :+:   */
+/*   ft_putendl_color.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/15 15:13:26 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:05:41 by ahryhory         ###   ########.fr       */
+/*   Created: 2018/03/22 16:18:31 by ahryhory          #+#    #+#             */
+/*   Updated: 2018/03/23 16:04:50 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void		print_stacks(t_stacks stacks)
+void		ft_putendl_color(char *s, int num, int fd)
 {
-	int		i;
-
-	ft_putendl_fd("====STACK A====", stacks.fd);
-	i = 0;
-	while (i < stacks.a_size)
+	if (num == 1)
 	{
-		ft_putnbr_fd(stacks.a_int[i].num, stacks.fd);
-		i++;
-		ft_putstr_fd("\n", stacks.fd);
+		ft_putstr_fd("\033[0;32m", fd);
+		ft_putendl_fd(s, fd);
+		ft_putstr_fd("\033[0m", fd);
 	}
-	ft_putendl_fd("====STACK B====", stacks.fd);
-	i = 0;
-	while (i < stacks.b_size)
+	else if (num == 2)
 	{
-		ft_putnbr_fd(stacks.b_int[i].num, stacks.fd);
-		i++;
-		ft_putstr_fd("\n", stacks.fd);
+		ft_putstr_fd("\033[0;31m", fd);
+		ft_putendl_fd(s, fd);
+		ft_putstr_fd("\033[0m", fd);
 	}
-	ft_putstr_fd("\n\n", stacks.fd);
 }

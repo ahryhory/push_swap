@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 12:32:54 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/21 15:17:20 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/23 14:43:17 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,36 @@ static void	swap(t_stacks *stacks, char *buf)
 	}
 }
 
+static void	add_stat(t_stacks *stacks, char *buf)
+{
+	if (ft_strequ(buf, SWAP_A))
+		stacks->stat_instr[0] += 1;
+	else if (ft_strequ(buf, SWAP_B))
+		stacks->stat_instr[1] += 1;
+	else if (ft_strequ(buf, SWAP_AB))
+		stacks->stat_instr[2] += 1;
+	else if (ft_strequ(buf, PUSH_A))
+		stacks->stat_instr[3] += 1;
+	else if (ft_strequ(buf, PUSH_B))
+		stacks->stat_instr[4] += 1;
+	else if (ft_strequ(buf, ROTATE_A))
+		stacks->stat_instr[5] += 1;
+	else if (ft_strequ(buf, ROTATE_B))
+		stacks->stat_instr[6] += 1;
+	else if (ft_strequ(buf, ROTATE_AB))
+		stacks->stat_instr[7] += 1;
+	else if (ft_strequ(buf, REVERSE_ROTATE_A))
+		stacks->stat_instr[8] += 1;
+	else if (ft_strequ(buf, REVERSE_ROTATE_B))
+		stacks->stat_instr[9] += 1;
+	else if (ft_strequ(buf, REVERSE_ROTATE_AB))
+		stacks->stat_instr[10] += 1;
+}
+
 void		move_stack(t_stacks *stacks, char *buf)
 {
-	ft_putendl(buf);
+	if (stacks->flgs.stat)
+		add_stat(stacks, buf);
 	if (ft_strequ(buf, SWAP_A) || ft_strequ(buf, SWAP_B)
 			|| ft_strequ(buf, SWAP_AB))
 		swap(stacks, buf);
@@ -47,4 +74,11 @@ void		move_stack(t_stacks *stacks, char *buf)
 			|| ft_strequ(buf, REVERSE_ROTATE_B)
 			|| ft_strequ(buf, REVERSE_ROTATE_AB))
 		reverse_rotate(stacks, buf);
+	if (stacks->flgs.color && is_stack_sorted(*stacks) &&
+			stacks->b_size == 0)
+		ft_putendl_color(buf, 1, stacks->fd);
+	else
+		ft_putendl_fd(buf, stacks->fd);
+	if (stacks->flgs.print_stck)
+		print_stacks(*stacks);
 }
