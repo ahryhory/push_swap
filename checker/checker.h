@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 12:23:41 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/24 15:32:59 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 16:19:54 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include <fcntl.h>
-# include <stdio.h>
 
 # define SWAP_A "sa"
 # define SWAP_B "sb"
@@ -66,7 +65,6 @@ void					push(t_stacks *stacks, char *buf);
 void					rotate(t_stacks *stacks, char *buf);
 void					reverse_rotate(t_stacks *stacks, char *buf);
 int						is_stack_sorted(t_stacks stacks);
-void					print_stacks(t_stacks stacks);
 int						read_flags(char **av, t_stacks *stacks);
 void					print_stats(t_stacks stacks);
 void					ft_putendl_color(char *s, int num, int fd);

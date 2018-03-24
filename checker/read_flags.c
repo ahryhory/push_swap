@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/23 11:51:37 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/24 15:39:36 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 16:01:43 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			read_flags(char **av, t_stacks *stacks)
 			flag_on(&(stacks->flgs.stat), &i);
 		if (ft_strequ(av[i], "-f"))
 			flag_on(&(stacks->flgs.file), &i);
-		if (stacks->flgs.file)
+		if (stacks->flgs.file && av[i])
 		{
 			stacks->wr = open(av[i++], O_RDWR);
 			stacks->flgs.file = 0;

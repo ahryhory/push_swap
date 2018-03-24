@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 11:38:27 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 14:26:41 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 16:18:38 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft/libft.h"
 # include <fcntl.h>
-# include <stdio.h>
 
 # define SWAP_A "sa"
 # define SWAP_B "sb"

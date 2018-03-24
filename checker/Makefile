@@ -6,7 +6,7 @@
 #    By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/22 12:17:34 by ahryhory          #+#    #+#              #
-#    Updated: 2018/03/23 16:22:12 by ahryhory         ###   ########.fr        #
+#    Updated: 2018/03/24 15:56:18 by ahryhory         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,6 @@ SRC += check_num_duplicates.c
 SRC += p_atoi.c
 SRC += is_stack_sorted.c
 SRC += ft_putendl_color.c
-SRC += print_stacks.c
 SRC += print_stats.c
 SRC += move_stack.c
 
