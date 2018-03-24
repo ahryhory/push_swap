@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 12:23:41 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:19:18 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 15:32:59 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ typedef struct			s_arr
 typedef struct			s_flags
 {
 	int					stat;
-	int					color;
-	int					print_stck;
 	int					file;
 	int					error;
 }						t_flags;

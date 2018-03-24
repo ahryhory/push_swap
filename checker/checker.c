@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/14 12:51:45 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:17:54 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 15:36:09 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,8 @@ static void	check_instruct(t_instruct *head, t_stacks stacks)
 	}
 }
 
-static void	checker_sort(t_stacks *stacks)
+static void	read_instrct(t_stacks *stacks, t_instruct *instrct)
 {
-	t_instruct	*instrct;
-	t_instruct	*head;
-
-	instrct = (t_instruct *)malloc(sizeof(t_instruct));
-	instrct->next = NULL;
-	head = instrct;
 	if (stacks->wr)
 		while (ft_get_next_line(stacks->wr, &(instrct->instruct)))
 		{
@@ -55,6 +49,17 @@ static void	checker_sort(t_stacks *stacks)
 			instrct = instrct->next;
 			instrct->next = NULL;
 		}
+}
+
+static void	checker_sort(t_stacks *stacks)
+{
+	t_instruct	*instrct;
+	t_instruct	*head;
+
+	instrct = (t_instruct *)malloc(sizeof(t_instruct));
+	instrct->next = NULL;
+	head = instrct;
+	read_instrct(stacks, instrct);
 	check_instruct(head, *stacks);
 	instrct = head;
 	while (instrct->next)
@@ -63,17 +68,35 @@ static void	checker_sort(t_stacks *stacks)
 		ft_strdel(&(instrct->instruct));
 		instrct = instrct->next;
 	}
+	while (head)
+	{
+		instrct = head->next;
+		free(head);
+		head = instrct;
+	}
 	if (is_stack_sorted(*stacks))
 		ft_putendl("OK");
 	else
 		ft_putendl("KO");
 }
 
+static void	read_num(t_stacks *stacks, char **av, int i)
+{
+	int		j;
+
+	j = 0;
+	while (j < stacks->a_size)
+	{
+		stacks->a_int[j].num = p_atoi(av[i], *stacks);
+		j++;
+		i++;
+	}
+}
+
 int			main(int ac, char **av)
 {
 	t_stacks	stacks;
 	int			i;
-	int			j;
 
 	if (ac == 1)
 		exit(1);
@@ -82,20 +105,15 @@ int			main(int ac, char **av)
 	stacks.a_int = (t_arr *)malloc(sizeof(t_arr) * ac);
 	stacks.b_int = (t_arr *)malloc(sizeof(t_arr) * ac);
 	i = read_flags(av, &stacks);
+	if (i == ac)
+		exit(1);
 	check_num(av, i, stacks);
-	j = 0;
-	while (j < stacks.a_size)
-	{
-		stacks.a_int[j].num = p_atoi(av[i], stacks);
-		j++;
-		i++;
-	}
+	read_num(&stacks, av, i);
 	check_num_duplicates(stacks);
-	if (stacks.flgs.print_stck)
-		print_stacks(stacks);
 	checker_sort(&stacks);
 	if (stacks.flgs.stat)
 		print_stats(stacks);
-	close(stacks.fd);
+	if (stacks.wr != 0)
+		close(stacks.fd);
 	return (0);
 }

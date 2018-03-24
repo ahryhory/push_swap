@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 12:32:54 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:05:05 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 15:36:59 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,4 @@ void		move_stack(t_stacks *stacks, char *buf)
 			|| ft_strequ(buf, REVERSE_ROTATE_B)
 			|| ft_strequ(buf, REVERSE_ROTATE_AB))
 		reverse_rotate(stacks, buf);
-	if (stacks->flgs.color && is_stack_sorted(*stacks) &&
-			stacks->b_size == 0)
-		ft_putendl_color(buf, 1, stacks->fd);
-	else
-		ft_putendl_fd(buf, stacks->fd);
-	if (stacks->flgs.print_stck)
-		print_stacks(*stacks);
 }

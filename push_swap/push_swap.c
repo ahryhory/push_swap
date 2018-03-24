@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/16 11:39:22 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:10:59 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 15:50:49 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int			main(int ac, char **av)
 	stacks.b_int = (t_arr *)malloc(sizeof(t_arr) * ac);
 	i = read_flags(av, &stacks);
 	check_num(av, i, stacks);
+	if (i == ac)
+		exit(1);
 	j = 0;
 	while (j < stacks.a_size)
 	{

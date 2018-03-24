@@ -6,7 +6,7 @@
 /*   By: ahryhory <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/22 15:02:26 by ahryhory          #+#    #+#             */
-/*   Updated: 2018/03/23 16:17:52 by ahryhory         ###   ########.fr       */
+/*   Updated: 2018/03/24 15:40:50 by ahryhory         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void	ft_error(int num, t_stacks stacks)
 	else if (num == 4 && stacks.flgs.error)
 		ft_putendl_fd("Duplicates", 2);
 	else if (num == 5 && stacks.flgs.error)
-		ft_putendl_fd("Instruction don’t exist and/or is incorrectly formatted", 2);
+	{
+		ft_putstr_fd("Instruction don’t exist", 2);
+		ft_putendl_fd(" and/or is incorrectly formatted", 2);
+	}
 	else
 		ft_putendl_fd("Error", 2);
 	exit(0);
